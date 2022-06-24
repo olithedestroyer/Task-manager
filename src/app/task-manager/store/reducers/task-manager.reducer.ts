@@ -13,9 +13,6 @@ export function taskmanagerReducer(
         case taskmanagerActionTypes.ADD_LIST: {
             return [...state, action.payload];
         }
-        case taskmanagerActionTypes.ADD_TASK: {
-            return [...state, action.payload];
-        }
         default:
             return state;
 

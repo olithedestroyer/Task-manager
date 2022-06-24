@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../../store/models/app-state.model';
 import { newtask } from '../../store/models/task.model';
-import { showNoTasksEmptyState } from '../../store/selectors/task-manager.selectors';
+import { getTasks, showNoTasksEmptyState } from '../../store/selectors/task-manager.selectors';
 
 @Component({
   selector: 'app-dash-board-content',
@@ -22,7 +22,7 @@ export class DashBoardContentComponent implements OnInit {
     this.store
       .select(showNoTasksEmptyState)
       .subscribe((showEmptyState) => (this.showEmptyState = showEmptyState));
-      this.newtask$ = this.store.select(store => store.tasks);
+      this.newtask$ = this.store.select(getTasks);
   }
 
   onNewTaskClick() {

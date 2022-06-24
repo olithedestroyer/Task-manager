@@ -1,11 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgModel, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { v4 as uuid } from 'uuid';
-import { NewListComponent } from '../new-list/new-list.component';
-import { AddlistAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
 import { newlist } from '../../store/models/list.model';
 
