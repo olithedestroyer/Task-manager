@@ -1,0 +1,9 @@
+<div class="sidebar">
+    <h1>Listen</h1>
+    <div class="list" *ngFor="let list of newlists$ |async">
+        <button class="button-list">{{list.name}}</button>
+    </div>
+    <div class="button">
+        <app-button (click)="onClick()">Add list</app-button>
+    </div>
+</div>

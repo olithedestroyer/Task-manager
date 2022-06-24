@@ -1,0 +1,14 @@
+@import "/src/styles/colors";
+
+.button{
+    padding: 13px 20px;
+    white-space: nowrap;
+    font-size: 18px;
+    background-color: $grayLight;
+    color: $black;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    margin-left: -1rem;
+
+}

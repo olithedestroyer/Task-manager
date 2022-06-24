@@ -1,0 +1,60 @@
+@import "/src/styles/colors";
+
+.main{
+    background-color: $background;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.new-list{
+    background-color: $white;
+    width: 626px;
+    height: 241px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    border-radius: 8px;
+}
+
+.buttons{
+    padding-top: 3rem;
+    padding-right: 1rem;
+    white-space: nowrap;
+    font-size: 18px;
+    background-color: $white;
+    color: $black;
+    border-radius: 6px;
+    border: none;
+    justify-content: end;
+    display: flex;
+
+}
+.titel{
+    padding-bottom: 2rem;
+    font-size: xx-large;
+    padding-top: 1rem;
+}
+
+.btnSpeichern{
+    padding: 13px 20px;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: $primary;
+    color: $white;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+}
+.btnAbbruch{
+    padding: 13px 20px;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: transparent;
+    color: #373e3e;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    margin-right: 1rem;
+}

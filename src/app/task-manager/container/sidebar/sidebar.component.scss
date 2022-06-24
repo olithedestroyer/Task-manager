@@ -1,0 +1,37 @@
+@import "/src/styles/colors";
+.sidebar {
+    padding: 46px 40px;
+    height: 100%;
+    width: 9rem;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    background-color: $white;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    
+  }
+  
+  .button {
+    margin-top: auto;
+  }
+  
+
+  
+  .button-list{
+    width: 100%;
+    max-width: 100%;
+    padding: 15px 20px 14px 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 18px;
+    background-color: $primary;
+    color: $primaryDark;
+    border-radius: 6px;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    margin-top: 1rem;
+  }

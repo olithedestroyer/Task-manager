@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.input {
+  height: 46px;
+  width: 35.5rem;
+  padding: 0 20px;
+  font-size: 18px;
+  background: $grayLight;
+  border: none;
+  border-radius: 6px;
+  color: $black;
+}
+
+.input::placeholder {
+  color: $black;
+}
+
+.input:focus,
+.input.active {
+  outline: none;
+  box-shadow: 0 0 0 2pt $primary;
+}

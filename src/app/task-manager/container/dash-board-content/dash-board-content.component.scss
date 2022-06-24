@@ -1,0 +1,32 @@
+@import "../../../../styles/colors";
+
+.content{
+    position: relative;
+    height: 100%;
+   
+}
+
+.addTask{
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 3rem;
+    border: 0px;
+    background-color: $primary;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-top: auto;
+    bottom: 0;
+}
+.fab{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.empty{
+    margin-top: 1rem;
+}
+
+.button-task{
+    width: 100%;
+}

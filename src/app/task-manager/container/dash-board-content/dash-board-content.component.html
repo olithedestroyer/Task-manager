@@ -1,0 +1,18 @@
+<div class="content">
+    <h1>Tasks</h1>
+    <div class="empty">
+        <app-empty-state *ngIf="showEmptyState">
+            Noch keine Tasks vorhanden.<br />
+            Füge einen neuen Task hinzu.
+        </app-empty-state>
+        <div *ngIf="showEmptyState">
+            <div class="Tasks" *ngFor="let Task of newtask$ |async">
+                <div class="button-task">{{Task.name}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fab">
+        <button class="addTask" (click)="onNewTaskClick()">+</button>
+    </div>
+</div>

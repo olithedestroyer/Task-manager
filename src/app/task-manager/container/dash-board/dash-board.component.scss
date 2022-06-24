@@ -1,0 +1,33 @@
+@import "/src/styles/colors";
+
+$borderRadius: 7px;
+
+.main {
+    height: 100vh;
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard {
+    width: 786px;
+    height: 501px;
+    background-color: $white;
+    border-radius: $borderRadius;
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 300px;
+    height: 100%;
+  }
+  
+  .content {
+    background-color: $grayLight;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    padding: 46px 40px;
+  }
+  

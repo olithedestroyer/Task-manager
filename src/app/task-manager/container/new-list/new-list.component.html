@@ -1,0 +1,14 @@
+<div class="main">
+    <div class="new-list">
+        <h1 class="titel">Neue Liste</h1>
+        <form (ngSubmit)="submit(value)">
+            <app-input [(ngModel)]="value" placeholder="Text eintragen" (onChange)="onChange($event)"></app-input>
+            <div class="column">
+                <div class="buttons">
+                    <button class="btnAbbruch" type="button" (click)="abbruch()">Abbruch</button>
+                    <button class="btnSpeichern" type="submit">Speichern</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
