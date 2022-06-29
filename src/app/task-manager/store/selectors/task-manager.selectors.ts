@@ -1,25 +1,17 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { AppState } from '../models/app-state.model';
 
-const getTaskManagerState = createFeatureSelector<AppState>(
-  'taskmanager'
-);
+const getTaskManagerState = createFeatureSelector<AppState>('taskmanager');
 
-const getListsInternal = createSelector(getTaskManagerState, (state) => {
-  return state.list;
-});
+const getListsInternal = createFeatureSelector<AppState>('list');
 
-const getTasksInternal = createSelector(getTaskManagerState, (state) => {
-  return state.tasks;
-});
+const getTasksInternal = createFeatureSelector<AppState>('task');
 
 export const getLists = createSelector(getListsInternal, (lists) => {
   return Object.values(lists);
 });
+export const getActiveList = createFeatureSelector<AppState, string>('activeList');
 
-export const getActiveList = createSelector(getTaskManagerState, (state) => {
-  return state.activeList;
-});
 
 export const getTasks = createSelector(
   getTasksInternal,
@@ -30,8 +22,8 @@ export const getTasks = createSelector(
 );
 
 export const showNoListsEmptyState = createSelector(getLists, (lists) => {
-  console.log("A");
-  return lists.length < 0;
+
+  return lists.length == 0;
 });
 
 export const showNoTasksEmptyState = createSelector(

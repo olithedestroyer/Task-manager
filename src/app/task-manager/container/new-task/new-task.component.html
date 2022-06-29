@@ -1,14 +1,20 @@
 <div class="main">
-    <div class="new-list">
-        <h1 class="titel">Neuer Task</h1>
-        <form (ngSubmit)="submittask(value1)">
-            <app-input [(ngModel)]="value1" placeholder="Text eintragen" (onChange)="onChange($event)"></app-input>
-            <div class="column">
-                <div class="buttons">
-                    <button class="btnAbbruch" type="button" (click)="abbruch()">Abbruch</button>
-                    <button class="btnSpeichern" type="submit">Speichern</button>
-                </div>
-            </div>
-        </form>
-    </div>
+  <div class="new-list">
+    <h1 class="titel">Neuer Task</h1>
+    <form (ngSubmit)="submittask(value1)">
+      <app-input
+        [(ngModel)]="value1"
+        placeholder="Text eintragen"
+        (onChange)="onChange($event)"
+      ></app-input>
+      <div class="column">
+        <div class="buttons">
+          <button class="btnAbbruch" type="button" (click)="abbruch()">
+            Abbruch
+          </button>
+          <button class="btnSpeichern" type="submit">Speichern</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

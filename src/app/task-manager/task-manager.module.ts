@@ -6,18 +6,18 @@ import { SidebarComponent } from './container/sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
-import { taskmanagerReducer } from './store/reducers/task-manager.reducer';
+import { listReducer } from './store/reducers/list.reducer';
 import { ListButtonComponent } from './components/list-button/list-button.component';
 import { NewTaskComponent } from './container/new-task/new-task.component';
 import { DashBoardContentComponent } from './container/dash-board-content/dash-board-content.component';
-import { taskReducer } from './store/reducers/task.reducer'
+import { activeListReducer, taskReducer } from './store/reducers/task.reducer'
 
 @NgModule({
   declarations: [DashBoardComponent, NewListComponent, SidebarComponent, ListButtonComponent, NewTaskComponent, DashBoardContentComponent],
-  imports: [CommonModule, SharedModule,FormsModule, StoreModule.forRoot({
-    list:taskmanagerReducer,
-    task: taskReducer,
-  } as ActionReducerMap<any,any>),
+  imports: [CommonModule, SharedModule,FormsModule, 
+    StoreModule.forFeature('list', listReducer),
+    StoreModule.forFeature('task ', taskReducer),
+    StoreModule.forFeature('activeList', activeListReducer),
   FormsModule,],
   exports: [DashBoardComponent, SidebarComponent]
 })

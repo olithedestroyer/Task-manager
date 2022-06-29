@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { observable, Observable, Subject, takeUntil } from 'rxjs';
 import { AppState } from '../../store/models/app-state.model';
 import { newtask } from '../../store/models/task.model';
 import { getTasks, showNoTasksEmptyState } from '../../store/selectors/task-manager.selectors';
@@ -14,15 +14,22 @@ import { getTasks, showNoTasksEmptyState } from '../../store/selectors/task-mana
 export class DashBoardContentComponent implements OnInit {
 
   newtask$!: Observable<newtask[]>; 
-  showEmptyState = true;
+  showEmptyState = false;
+  private destroyed$ = new Subject<void>();
 
   constructor(private router: Router, private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.newtask$ = this.store.select(store => store.tasks).pipe(takeUntil(this.destroyed$));
     this.store
-      .select(showNoTasksEmptyState)
+      .select(showNoTasksEmptyState).pipe(takeUntil(this.destroyed$))
       .subscribe((showEmptyState) => (this.showEmptyState = showEmptyState));
       this.newtask$ = this.store.select(getTasks);
+  }
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+
+    this.destroyed$.complete();
   }
 
   onNewTaskClick() {

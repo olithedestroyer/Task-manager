@@ -1,14 +1,14 @@
 <div class="main">
-    <div class="dashboard">
-      <div class="sidebar">
-        <app-sidebar></app-sidebar>
+  <div class="dashboard">
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="content">
+      <div class="empty" *ngIf="showEmptyState">
+        <app-empty-state> Bitte erstelle eine Liste </app-empty-state>
       </div>
-      <div class="content">
-        <div class="empty" *ngIf="showEmptyState">
-          <app-empty-state> Bitte erstelle eine Liste </app-empty-state>
-        </div>
-  
-        <app-dash-board-content *ngIf="!showEmptyState"></app-dash-board-content>
-      </div>
+
+      <app-dash-board-content *ngIf="!showEmptyState"></app-dash-board-content>
     </div>
   </div>
+</div>

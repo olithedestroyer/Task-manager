@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {v4 as uuid} from 'uuid';
-import { AddlistAction } from '../../store/actions/task-manager.actions';
+import { AddactivelistAction, AddlistAction } from '../../store/actions/task-manager.actions';
 import { taskmanagerAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
 import { newlist } from '../../store/models/list.model';
@@ -20,6 +20,7 @@ export class NewListComponent implements OnInit {
   submit(value: string) {
     const list = { id: uuid(), name: value };
     this.store.dispatch(new AddlistAction(list));
+    this.store.dispatch(new AddactivelistAction(list.id));
     this.router.navigateByUrl('/dash-board')
   }
 

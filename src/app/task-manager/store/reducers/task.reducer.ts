@@ -1,4 +1,5 @@
 import { taskmanagerAction, taskmanagerActionTypes } from "../actions/task-manager.actions";
+import { AppState } from "../models/app-state.model";
 import { newlist } from "../models/list.model";
 import { newtask } from "../models/task.model";
 
@@ -19,5 +20,19 @@ export function taskReducer(
         default:
             return state;
 
+    }
+}
+
+export function activeListReducer(
+    state: '',
+    action: taskmanagerAction,
+
+){
+    switch (action.type) {
+        case taskmanagerActionTypes.ACTIVE_LIST: {
+            return [action.payload]
+        }
+        default:
+            return state;
     }
 }

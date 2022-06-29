@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { AddactivelistAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
 import { newlist } from '../../store/models/list.model';
 
@@ -24,7 +25,10 @@ export class SidebarComponent implements OnInit {
     this.router.navigateByUrl('/list/new')
   }
 
+clickList(id: string){
+  this.store.dispatch(new AddactivelistAction(id));
 
+}
 };
 
 
