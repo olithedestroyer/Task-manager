@@ -1,25 +1,21 @@
 import { taskmanagerAction, taskmanagerActionTypes } from "../actions/task-manager.actions";
-import { AppState } from "../models/app-state.model";
-import { newlist } from "../models/list.model";
-import { newtask } from "../models/task.model";
+import { Task } from "../models/task.model";
 
-const initialState: Array<newtask> = [
+const initialState: Array<Task> = [
 ];
 
 export function taskReducer(
-    state: Array<newtask> = initialState,
+    state: Array<Task> = initialState,
     action: taskmanagerAction,
 ) {
     switch (action.type) {
      
         case taskmanagerActionTypes.ADD_TASK: {
-
             return [...state, action.payload];
         }
 
         default:
             return state;
-
     }
 }
 

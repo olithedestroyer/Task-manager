@@ -6,8 +6,8 @@
       Füge einen neuen Task hinzu.
     </app-empty-state>
 
-    <div class="Tasks" *ngFor="let Task of newtask$ | async">
-      <button class="button-task">{{ Task.name }}</button>
+    <div class="Tasks" *ngFor="let task of newtask$ | async">
+      <button class="button-task">{{ task.name }}</button>
     </div>
   </div>
 

@@ -30,6 +30,7 @@ export class NewTaskComponent implements OnInit {
 
   submittask(value: string) {
     const task = { id: uuid(), name: value, listId: this.activeList,};
+    console.log(task);
     this.store.dispatch(new AddtaskAction(task));
     this.router.navigateByUrl('/dash-board')
   }
