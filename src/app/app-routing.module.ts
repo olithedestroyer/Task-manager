@@ -5,6 +5,7 @@ import { NewListComponent } from './task-manager/container/new-list/new-list.com
 import { DashBoardComponent } from './task-manager/container/dash-board/dash-board.component';
 import { DashBoardContentComponent } from './task-manager/container/dash-board-content/dash-board-content.component';
 import { NewTaskComponent } from './task-manager/container/new-task/new-task.component';
+import { EditTaskComponent } from './task-manager/container/edit-task/edit-task.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dash-board'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'sidebar', component: SidebarComponent},
   { path: 'dash-board-content', component: DashBoardContentComponent},
   { path: 'task/new', component: NewTaskComponent},
+  { path: 'task/id', component: EditTaskComponent},
 
 ];
 

@@ -10,13 +10,15 @@ import { listReducer } from './store/reducers/list.reducer';
 import { ListButtonComponent } from './components/list-button/list-button.component';
 import { NewTaskComponent } from './container/new-task/new-task.component';
 import { DashBoardContentComponent } from './container/dash-board-content/dash-board-content.component';
-import { activeListReducer, taskReducer } from './store/reducers/task.reducer'
+import { activeListReducer, taskReducer } from './store/reducers/task.reducer';
+import { TaskComponent } from './components/task/task.component';
+import { EditTaskComponent } from './container/edit-task/edit-task.component'
 
 @NgModule({
-  declarations: [DashBoardComponent, NewListComponent, SidebarComponent, ListButtonComponent, NewTaskComponent, DashBoardContentComponent],
+  declarations: [DashBoardComponent, NewListComponent, SidebarComponent, ListButtonComponent, NewTaskComponent, DashBoardContentComponent, TaskComponent, EditTaskComponent],
   imports: [CommonModule, SharedModule,FormsModule, 
     StoreModule.forFeature('list', listReducer),
-    StoreModule.forFeature('task ', taskReducer),
+    StoreModule.forFeature('task', taskReducer),
     StoreModule.forFeature('activeList', activeListReducer),
   FormsModule,],
   exports: [DashBoardComponent, SidebarComponent]

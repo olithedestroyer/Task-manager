@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AddactivelistAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
-import { newlist } from '../../store/models/list.model';
+import { List } from '../../store/models/list.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,13 +13,14 @@ import { newlist } from '../../store/models/list.model';
 })
 export class SidebarComponent implements OnInit {
 
-  newlists$!: Observable<newlist[]>;
+  newlists$!: Observable<List[]>;
 
   constructor(private store: Store<AppState>, private router: Router) {
 
   }
   ngOnInit(): void {
     this.newlists$ = this.store.select(store => store.list);
+    console.log(this.newlists$);
   }
   onClick = () => {
     this.router.navigateByUrl('/list/new')
@@ -29,6 +30,4 @@ clickList(id: string){
   this.store.dispatch(new AddactivelistAction(id));
 
 }
-};
-
-
+}

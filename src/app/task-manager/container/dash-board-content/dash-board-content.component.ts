@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { observable, Observable, Subject, takeUntil } from 'rxjs';
+import { DeleteTaskAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
 import { Task } from '../../store/models/task.model';
 import { getTasks, showNoTasksEmptyState } from '../../store/selectors/task-manager.selectors';
@@ -19,7 +20,7 @@ export class DashBoardContentComponent implements OnInit {
   constructor(private router: Router, private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.newtask$ = this.store.select(store => store.tasks).pipe(takeUntil(this.destroyed$));
+    this.newtask$ = this.store.select(getTasks).pipe(takeUntil(this.destroyed$));
     this.store
       .select(showNoTasksEmptyState).pipe(takeUntil(this.destroyed$))
       .subscribe((showEmptyState) => (this.showEmptyState = showEmptyState));
@@ -34,7 +35,17 @@ export class DashBoardContentComponent implements OnInit {
     this.router.navigateByUrl('/task/new');
   }
 
-  reload() {
-    this.newtask$ = this.store.select(store => store.tasks).pipe();
+ 
+  editTask(task: Task) {
+    this.router.navigate([`/task/${task.id}`]);
+  }
+
+  toggleDone(task: Task) {
+    
+  }
+
+  deleteTask(task: Task) {
+    this.store.dispatch(new DeleteTaskAction(task.id));
+    this.newtask$ = this.store.select(getTasks);
   }
 }

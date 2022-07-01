@@ -21,6 +21,7 @@ export const getTasks = createSelector(
   }
 );
 
+
 export const showNoListsEmptyState = createSelector(getLists, (lists) => {
   return lists.length == 0;
 });

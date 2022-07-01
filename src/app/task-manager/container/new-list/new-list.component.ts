@@ -5,7 +5,7 @@ import {v4 as uuid} from 'uuid';
 import { AddactivelistAction, AddlistAction } from '../../store/actions/task-manager.actions';
 import { taskmanagerAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
-import { newlist } from '../../store/models/list.model';
+import { List } from '../../store/models/list.model';
 
 @Component({
   selector: 'app-new-list',

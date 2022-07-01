@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import {v4 as uuid} from 'uuid';
 import { AddlistAction, AddtaskAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
-import { newlist } from '../../store/models/list.model';
+import { List } from '../../store/models/list.model';
 import { getActiveList } from '../../store/selectors/task-manager.selectors';
 
 @Component({
