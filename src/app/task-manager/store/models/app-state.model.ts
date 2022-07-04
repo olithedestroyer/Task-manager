@@ -3,6 +3,6 @@ import { Task } from './task.model';
 
 export interface AppState {
   activeList: string;
-  tasks: Array<Task>;
-  list: Array<List>;
+  tasks:{[id: string]: Task};
+  lists:{[id: string]: List};
 }

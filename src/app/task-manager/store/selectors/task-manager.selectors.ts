@@ -3,15 +3,21 @@ import { AppState } from '../models/app-state.model';
 
 const getTaskManagerState = createFeatureSelector<AppState>('taskmanager');
 
-const getListsInternal = createFeatureSelector<AppState>('list');
+const getListsInternal = createSelector(getTaskManagerState, (state) => {
+  return state.lists;
+});
 
-const getTasksInternal = createFeatureSelector<AppState>('task');
+const getTasksInternal = createSelector(getTaskManagerState, (state) => {
+  return state.tasks;
+});
 
 export const getLists = createSelector(getListsInternal, (lists) => {
   return Object.values(lists);
 });
-export const getActiveList = createFeatureSelector<AppState, string>('activeList');
 
+export const getActiveList = createSelector(getTaskManagerState, (state) => {
+  return state.activeList;
+});
 
 export const getTasks = createSelector(
   getTasksInternal,
@@ -21,6 +27,10 @@ export const getTasks = createSelector(
   }
 );
 
+export const getTaskById = createSelector(
+  getTasksInternal,
+  (tasks: { [x: string]: any; }, props: { id: string | number; }) => tasks[props.id]
+);
 
 export const showNoListsEmptyState = createSelector(getLists, (lists) => {
   return lists.length == 0;

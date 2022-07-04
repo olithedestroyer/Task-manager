@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AddactivelistAction } from '../../store/actions/task-manager.actions';
 import { AppState } from '../../store/models/app-state.model';
 import { List } from '../../store/models/list.model';
+import { getLists } from '../../store/selectors/task-manager.selectors';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,7 +20,7 @@ export class SidebarComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.newlists$ = this.store.select(store => store.list);
+    this.newlists$ = this.store.select(getLists);
     console.log(this.newlists$);
   }
   onClick = () => {

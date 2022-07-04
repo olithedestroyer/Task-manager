@@ -11,11 +11,11 @@ export enum taskmanagerActionTypes {
 
 export class AddlistAction implements Action {
   readonly type = taskmanagerActionTypes.ADD_LIST;
-  constructor(public payload: List) {}
+  constructor(public List: List) {}
 }
 export class AddtaskAction implements Action {
   readonly type = taskmanagerActionTypes.ADD_TASK;
-  constructor(public payload: Task) {}
+  constructor(public Task: Task) {}
 }
 export class AddactivelistAction implements Action {
     readonly type = taskmanagerActionTypes.ACTIVE_LIST;

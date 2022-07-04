@@ -3,18 +3,20 @@
 $borderRadius: 7px;
 
 .main {
-    height: 100vh;
+    height: 100vmin;
     background-color: $background;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .dashboard {
-    width: 786px;
-    height: 501px;
+    width: 886px;
+    height: 461px;
     background-color: $white;
     border-radius: $borderRadius;
     display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
   }
   
   .sidebar {

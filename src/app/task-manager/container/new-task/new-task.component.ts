@@ -14,7 +14,7 @@ import { getActiveList } from '../../store/selectors/task-manager.selectors';
 })
 export class NewTaskComponent implements OnInit {
 
-  activeList!: string;
+  private activeList!: string;
 
   value1= ''
   constructor( private router: Router, private store: Store<AppState>) { 
@@ -29,9 +29,10 @@ export class NewTaskComponent implements OnInit {
   }
 
   submittask(value: string) {
-    const task = { id: uuid(), name: value, listId: this.activeList,};
-    console.log(task);
-    this.store.dispatch(new AddtaskAction(task));
+
+    const Task = {id: uuid(), name: value, listId: this.activeList,};
+    this.store.dispatch(new AddtaskAction(Task));
+    console.log(this.activeList);
     this.router.navigateByUrl('/dash-board')
   }
   onChange(value: string) {
