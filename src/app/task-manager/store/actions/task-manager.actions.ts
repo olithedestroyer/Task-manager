@@ -6,7 +6,8 @@ export enum taskmanagerActionTypes {
   ADD_LIST = '[TASKMANAGER] Add list',
   ADD_TASK = '[TASKMANAGER] Add task',
   ACTIVE_LIST = '[TASKMANAGER] Add activelist',
-  DELETE_TASK = '[TASKMANAGER] Delete task' 
+  DELETE_TASK = '[TASKMANAGER] Delete task',
+  RENAME_TASK = '[TASKMANAGER] Rename task'
 }
 
 export class AddlistAction implements Action {
@@ -24,7 +25,11 @@ export class AddactivelistAction implements Action {
 export class DeleteTaskAction implements Action {
   readonly type = taskmanagerActionTypes.DELETE_TASK;
   constructor(public id: string) {}
+}
+export class RenameTaskAction implements Action {
 
+  readonly type = taskmanagerActionTypes.RENAME_TASK;
+  constructor(public id: string, public name: string) {}
 }
 
-export type taskmanagerAction = AddlistAction | AddtaskAction | AddactivelistAction | DeleteTaskAction;
+export type taskmanagerAction = AddlistAction | AddtaskAction | AddactivelistAction | DeleteTaskAction |RenameTaskAction;

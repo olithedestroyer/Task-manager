@@ -24,7 +24,8 @@ export class SidebarComponent implements OnInit {
     console.log(this.newlists$);
   }
   onClick = () => {
-    this.router.navigateByUrl('/list/new')
+    this.router.navigateByUrl('/list/new')  
+
   }
 
 clickList(id: string){

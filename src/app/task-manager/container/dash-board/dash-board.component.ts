@@ -11,7 +11,7 @@ import { takeUntil, Subject } from 'rxjs';
   styleUrls: ['./dash-board.component.scss'],
 })
 export class DashBoardComponent implements OnInit, OnDestroy {
-  showEmptyState = false;
+  showEmptyState = true;
   private destroyed$ = new Subject<void>();
 
   constructor(private route: ActivatedRoute, private store: Store<AppState>) {}

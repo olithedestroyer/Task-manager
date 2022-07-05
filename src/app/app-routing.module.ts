@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'sidebar', component: SidebarComponent},
   { path: 'dash-board-content', component: DashBoardContentComponent},
   { path: 'task/new', component: NewTaskComponent},
-  { path: 'task/id', component: EditTaskComponent},
+  { path: 'task/:id', component: EditTaskComponent},
 
 ];
 

@@ -16,7 +16,7 @@ import { EditTaskComponent } from './container/edit-task/edit-task.component'
 @NgModule({
   declarations: [DashBoardComponent, NewListComponent, SidebarComponent, ListButtonComponent, NewTaskComponent, DashBoardContentComponent, TaskComponent, EditTaskComponent],
   imports: [CommonModule, SharedModule,FormsModule, 
-    StoreModule.forFeature('task-manager', taskReducer),
+    StoreModule.forFeature('taskmanager', taskReducer),
   FormsModule,],
   exports: [DashBoardComponent, SidebarComponent]
 })
